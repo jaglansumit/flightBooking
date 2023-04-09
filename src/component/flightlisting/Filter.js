@@ -24,7 +24,7 @@ const sortTypes = [
 const {width} = Dimensions.get('screen');
 
 const Filter = ({visibility, onClose, filterData}) => {
-  const [selectedSort, setSelectedSort] = useState(null);
+  const [selectedSort, setSelectedSort] = useState('1');
   const [selectdAirline, setSelectedAirlines] = useState(null);
 
   const _applyButton = async () => {

@@ -14,11 +14,13 @@ export default FlightsList = ({navigation}) => {
   const GetFlights = () => dispatch(getFlights());
   const SetFlight = data => dispatch(setFlight(data));
 
+  console.log('flights____', flights);
+
   // ---------- States --------- //
   const [filterVisibility, setFilterVisibility] = useState(false);
   const [filterData, setFilterData] = useState({
     airline: null,
-    sort: null,
+    sort: '1',
   });
 
   const data = flights
@@ -30,7 +32,11 @@ export default FlightsList = ({navigation}) => {
       }
     })
     .sort((a, b) => {
-      return a.fare - b.fare;
+      if (filterData.sort === '1') {
+        return a.fare - b.fare;
+      } else {
+        return b.fare - a.fare;
+      }
     });
 
   useEffect(() => {
