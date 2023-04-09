@@ -1,0 +1,6 @@
+module Pods_mirth_mirthTests {
+  umbrella header "Pods-mirth-mirthTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
